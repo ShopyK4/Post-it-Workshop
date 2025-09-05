@@ -10,7 +10,7 @@ body {
     color: #eee; 
 }
 #app-container { 
-    max-width: 420px; 
+    max-width: 700px; 
     margin: 40px auto; 
     background: white; 
     padding: 32px 28px 28px 28px; 
@@ -56,10 +56,28 @@ body {
 }
 #notes-container { 
     margin-top: 24px; 
-    display: flex; 
-    flex-wrap: wrap; 
-    gap: 14px; 
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    justify-items: center;
+    align-items: start;
+    width: 100%;
+    max-width: 100%;
+    min-height: 200px;
+@media (max-width: 900px) {
+    #app-container {
+        max-width: 98vw;
+    }
+    #notes-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    #notes-container {
+        grid-template-columns: 1fr;
+    }
+}
 }
 .note { 
     padding: 18px; 
